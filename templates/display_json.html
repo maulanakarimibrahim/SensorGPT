@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Loader PT. Taufik Sejahtera</title>
+
+    <style>
+        body {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .company-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            color: black;
+        }
+
+        .company-name {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .company-info {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Operational per OPSCO PT. Moya Indonesia</h1>
+
+    {% for company in data['opsco'] %}
+        <div class="company-box">
+            <h2 class="company-name">{{ company['name'] }}</h2>
+            <hr>
+
+            <p class="company-info">Temperature: {{ company['temperature'] }} &deg;C</p>
+            <p class="company-info">Kelembapan: {{ company['kelembapan'] }} g/m&sup3</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
